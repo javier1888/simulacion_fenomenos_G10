@@ -11,12 +11,48 @@ El sistema modela una cama de algas Ulva stenophylloides que se encuentran sobre
 <img width="702" height="169" alt="image" src="https://github.com/user-attachments/assets/143af2f6-d902-4917-9629-9a54074f3eab" />
 
 
-
-Como se menciona anteriormente el fenomeno de transporte utilizado es el de transfernecia de masa, en concreto la difusion de humedad y descrita por la segunda ley de Fick. Los supuestos principales son un dominio 1D con forma de placa placa con simetría en el plano medio, proceso isotérmico (la temperatura del alga es uniforme e igual a la del aire de secado), propiedades del aire constantes y flujo homogéneo, como tambein la difusividad de humedad se considera independiente del contenido de agua, osea constante y la densidad del alga seca constante tambien.
+Como se menciona anteriormente el fenomeno de transporte utilizado es el de transferencia de masa, en concreto la difusión de húmedad y descrita por la segunda ley de Fick. Los supuestos principales son un dominio 1D con forma de placa horizontal con simetría en el plano medio, proceso isotérmico (la temperatura del alga es uniforme e igual a la del aire de secado), propiedades del aire constantes y flujo homogéneo, como tambein la difusividad de humedad se considera independiente del contenido de agua, osea constante y la densidad del alga seca constante tambien.
 
 <img width="573" height="325" alt="image" src="https://github.com/user-attachments/assets/49fc9702-f728-4fb2-9305-af48aa59f2d7" />
 
 Se considera una condicion incial que sería la humedad incial que posee el alga X(z,t=0) = Xo. La primera condicion de borde es del tipo Neumann en z=0, en donde no hay humedad en el plano central debido a simetria del secado, dX/dz|z=0 = 0. La segunda condicion de borde es del tipo Robin (convectiva) en z= L/2, en donde en la interface el flujo difusivo interno es igual al flujo convectivo de la sueprficie, Deff = dX/dz|z=L/2 = -km(C_aire-C_L/2).
+
+#Descripción metodo númerico
+
+La implementación numérica del modelo se basa en el método de diferencias finitas (FTCS) aplicado a la ecuación de difusión de Fick en 1D. El dominio espacial corresponde al espesor efectivo de la cama de algas, que se discretiza en N+1 nodos igualmente espaciados con paso ∆z, desde el plano de simetria en z=0 hasta la superficie que está en contacto con el aire en z=L/2. Para el dominio del tiempo se utiliza un paso ∆t, y dado que el metodo de Euler explicito (FTCS) no es completamente estable, se ocupó la condicion de estabilidad de Von Neumann para garantizar que la solución numerica no diverja r=Deff*Δt/(Δz)^2, y se utiliza un Δt que haga que el valor de r (numero de Fourier) sea menor o igual a 0.5.
+
+Se parte de la ecuación de difusión en 1D con Deff constante y se aproxima la derivada temporal con un esquema hacia adelante en el tiempo y la derivada espacial de segundo orden con diferencias centrales para un nodo interior cualquiera i, con 2 ≤ i ≤ N, obteniendo la siguiente ecuación discretizada
+
+<img width="244" height="58" alt="image" src="https://github.com/user-attachments/assets/dec74e54-472f-4b0e-afa7-7a0d80e56543" />
+
+Las condiciones de borde se discretizan considerando una malla de N + 1 nodos. Para la condicion de borde 1, en el plano de simetría se impone una condición de flujo nulo, es decir, ∂X∂z∣z=0 = 0, la cual se aproxima numéricamente imponiendo la relación Xt0 = Xt2.
+
+<img width="360" height="63" alt="image" src="https://github.com/user-attachments/assets/b19bdb04-a518-41d2-9ecd-28ab73a5c575" />
+
+Para la condicion de borde 2, la interfaz se impone la condición de flujo convectivo y se utiliza el balance de flujo para obtener la ecuación discretizada. Sustituyendo el flujo de borde (FN +1/2 = −km(Caire − Ce)) y el flujo interno (FN −1/2 ≈ D XtN +1−XtN∆z ) en el lado derecho, se obtiene la siguiente ecuacion discretizada:
+
+<img width="361" height="56" alt="image" src="https://github.com/user-attachments/assets/01338745-ce63-4f6e-b529-aa0ab063ec6a" />
+
+Finalmente para la condición inicial del problema se establece considerando una distribución uniforme de humedad en todo el dominio al tiempo inicial t = 0:
+
+<img width="258" height="42" alt="image" src="https://github.com/user-attachments/assets/5bf50888-46d3-42a7-a310-716bd0dbd530" />
+
+Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ y la la geometria es una placa, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilitando la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente mas simple, lo que es mas eficiente para trabajar con tiempos de cómputo bajos, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
+
+
+
+
+
+
+Grafico 1 
+<img width="530" height="402" alt="image" src="https://github.com/user-attachments/assets/a092d898-8a64-493a-8c5f-3bde4568f569" /> <img width="777" height="589" alt="image" src="https://github.com/user-attachments/assets/151ead74-d93f-4693-bc9c-48273eedb767" />
+
+Este grafico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 1"
+El siguiente grafico presenta como varia la cantidad de humedad del alga hasta la interface (2mm), aqui por ejemplo se puede apreciar que la cantidad de humedad al pasar las las 8 horas no se logra una disminucion significativa de la humedad dentro de alga.
+
+
+
+
 
 
 
