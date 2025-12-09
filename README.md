@@ -37,19 +37,32 @@ Finalmente para la condición inicial del problema se establece considerando una
 
 <img width="258" height="42" alt="image" src="https://github.com/user-attachments/assets/5bf50888-46d3-42a7-a310-716bd0dbd530" />
 
-Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ, y la geometria es una placa horizontal relativamente, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilita la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente es sencillo de implementar, lo que es mas eficiente para trabajar con tiempos de cómputo bajos, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
+Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ, y la geometria es una placa horizontal relativamente, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilita la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente es sencillo de implementar, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
 
 
 
 
 
+Graficos
 
-Grafico 1 
+En los cuatro siguientes graficos se muestra como va disminuyendo la cantida de humedad a lo largo del espesor del alga (2mm), midiendose a distintos periodos de tiempo hasta un tiempo  maximo de 8 horas
+
 <img width="530" height="402" alt="image" src="https://github.com/user-attachments/assets/a092d898-8a64-493a-8c5f-3bde4568f569" /> 
-<img width="777" height="589" alt="image" src="https://github.com/user-attachments/assets/151ead74-d93f-4693-bc9c-48273eedb767" />
+Figura 1.  Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 1"
 
-Este grafico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 1"
-El siguiente grafico presenta como varia la cantidad de humedad del alga hasta la interface (2mm), aqui por ejemplo se puede apreciar que la cantidad de humedad al pasar las las 8 horas no se logra una disminucion significativa de la humedad dentro de alga.
+<img width="777" height="589" alt="image" src="https://github.com/user-attachments/assets/151ead74-d93f-4693-bc9c-48273eedb767" />
+Figura 2.  Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 2"
+
+El perfil de cantidad de humedad para este caso se puede apreciar que al pasar las 8 horas no se logra una variacion significativa de la humedad dentro de alga, se visualiza una disminucion maxima de 0.92 a 0.86 viendose limitada y no muy funcional el modelo. Se ve que mantiene cantidad de humedad cercanos a la inicial durante gran parte del tiempo y existe una leve disminucion cerca de la superficie. 
+
+
+<img width="534" height="406" alt="image" src="https://github.com/user-attachments/assets/4162de71-8754-4e0d-bd48-e2fd77d3c75c" />
+Figura 3.  Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 1"
+
+<img width="761" height="587" alt="image" src="https://github.com/user-attachments/assets/f18171bd-e985-4060-9bf8-0b81a538e19c" />
+Figura 4. Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 2"
+
+Al observar ambos graficos ya muestran una mejora en el secado del alga, en donde se observa que la cantidad de humedad al pasar las 8 horas disminuye significativamente, quedando menos de un 0.1 kg agua/kg solido seco, estando practicamente seco. La humedad desciende gradualmente a medida que nos acercamos a la superficie, lo cual ocurre a una tasa muy baja. Por lo tanto el modelo nos indica que al aumentar la temperatura a la que se trabaja con el horno convectivo el alga logra deshidratarse de mejor manera. 
 
 
 
