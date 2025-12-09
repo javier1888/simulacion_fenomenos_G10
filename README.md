@@ -48,10 +48,14 @@ Graficos
 En los cuatro siguientes graficos se muestra como va disminuyendo la cantida de humedad a lo largo del espesor del alga (2mm), midiendose a distintos periodos de tiempo hasta un tiempo  maximo de 8 horas
 
 <img width="530" height="402" alt="image" src="https://github.com/user-attachments/assets/a092d898-8a64-493a-8c5f-3bde4568f569" /> 
-Figura 1.  Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 1"
+
+Figura 1.  
+Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 1"
 
 <img width="777" height="589" alt="image" src="https://github.com/user-attachments/assets/151ead74-d93f-4693-bc9c-48273eedb767" />
-Figura 2.  Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 2"
+
+Figura 2.  
+Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 2"
 
 El perfil de cantidad de humedad para este caso se puede apreciar que al pasar las 8 horas no se logra una variacion significativa de la humedad dentro de alga, se visualiza una disminucion maxima de 0.92 a 0.86 viendose limitada y no muy funcional el modelo. Se ve que mantiene cantidad de humedad cercanos a la inicial durante gran parte del tiempo y existe una leve disminucion cerca de la superficie. 
 
