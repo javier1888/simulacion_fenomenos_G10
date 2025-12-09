@@ -37,7 +37,7 @@ Finalmente para la condición inicial del problema se establece considerando una
 
 <img width="258" height="42" alt="image" src="https://github.com/user-attachments/assets/5bf50888-46d3-42a7-a310-716bd0dbd530" />
 
-Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ y la la geometria es una placa, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilitando la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente mas simple, lo que es mas eficiente para trabajar con tiempos de cómputo bajos, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
+Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ, y la geometria es una placa horizontal relativamente, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilita la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente es sencillo de implementar, lo que es mas eficiente para trabajar con tiempos de cómputo bajos, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
 
 
 
@@ -45,7 +45,8 @@ Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se model
 
 
 Grafico 1 
-<img width="530" height="402" alt="image" src="https://github.com/user-attachments/assets/a092d898-8a64-493a-8c5f-3bde4568f569" /> <img width="777" height="589" alt="image" src="https://github.com/user-attachments/assets/151ead74-d93f-4693-bc9c-48273eedb767" />
+<img width="530" height="402" alt="image" src="https://github.com/user-attachments/assets/a092d898-8a64-493a-8c5f-3bde4568f569" /> 
+<img width="777" height="589" alt="image" src="https://github.com/user-attachments/assets/151ead74-d93f-4693-bc9c-48273eedb767" />
 
 Este grafico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 50°C Grafico 1"
 El siguiente grafico presenta como varia la cantidad de humedad del alga hasta la interface (2mm), aqui por ejemplo se puede apreciar que la cantidad de humedad al pasar las las 8 horas no se logra una disminucion significativa de la humedad dentro de alga.
