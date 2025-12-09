@@ -40,7 +40,7 @@ Finalmente para la condición inicial del problema se establece considerando una
 Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ, y la geometria es una placa horizontal relativamente, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilita la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente es sencillo de implementar, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
 
 
-#Instrucciones para ejecutar el código 
+# Instrucciones para ejecutar código 
 
 Se importan los módulos necesarios para el cálculo númerico y la visualización.
 
@@ -90,7 +90,7 @@ num) para visualizar la evolución del contenido de humedad en funci´on del tie
 
 
 
-#Graficos
+# Gráficos
 
 En los cuatro siguientes graficos se muestra como va disminuyendo la cantida de humedad a lo largo del espesor del alga (2mm), midiendose a distintos periodos de tiempo hasta un tiempo  maximo de 8 horas
 
