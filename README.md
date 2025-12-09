@@ -1,4 +1,4 @@
-# simulacion_fenomenos_G10
+# Descripcion del Proyecto
 Este proyecto busca modelar numericamente el secado por medio de un horno convectivo de la macroalga Ulva Stenophylloides, siendo esta la principal responsable de las mareas verdes que ocurren en la bahia de Algarrobo, Chile. Para ellos se realiza un modelo 1-D no estacionario de difusión de humedad mediante el uso de la segunda ley de Difusion de Fick.
 
 La problematica principal que afronta este proyecto es el exceso de biomasa del alga Ulva Stenophylloides que es la responsable de las mareas verdes que ocurren en la bahia de Algarrobo, Chile. Esta acumulación en las playas genera un gran impacto ambiental pudiendo causar hipoxia como tambien limitar el paso de la luz solar, provocando la muerte de animales y plantas del ecosistema marino local. Ademas esta situación genera impactos socioeconomicos relevantes, la presencia en abundancia de esta alga a provocado malos olores y problemas de higiene en las costas logrando el cierre de las playas, perjudicando el turismo local y a los comericiantes.
