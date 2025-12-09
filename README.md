@@ -57,10 +57,12 @@ El perfil de cantidad de humedad para este caso se puede apreciar que al pasar l
 
 
 <img width="534" height="406" alt="image" src="https://github.com/user-attachments/assets/4162de71-8754-4e0d-bd48-e2fd77d3c75c" />
+
 Figura 3.  
 Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 1"
 
 <img width="761" height="587" alt="image" src="https://github.com/user-attachments/assets/f18171bd-e985-4060-9bf8-0b81a538e19c" />
+
 Figura 4. 
 Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 2"
 
