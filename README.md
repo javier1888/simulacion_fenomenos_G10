@@ -40,10 +40,57 @@ Finalmente para la condición inicial del problema se establece considerando una
 Este metodo numerico es adecuado para nuestro fenomeno estudiado porque se modela con una EDP lineal unidimensional , usando coeficientes constante en la ecuacion como lo son Deff y ρ, y la geometria es una placa horizontal relativamente, lo que nos ayuda a poder representar el dominio del sistema como una grilla con una cantidad de nodos finitos, en donde se pueden obtener grillas uniformes y la distancia entre cada nodo se mantiene constante en toda la grilla. Ademas facilita la idea de que en los extremos de la grilla se plantean las condiciones de borde. Tambien las condiciones de borde utilizadas en el modelo cumplen con las condiciones de borde que funcionan en el metodo de diferencias finitas como lo son las de Neumann, Dirichlet y Robin. Ademas este esquema explícito es computacionalmente es sencillo de implementar, siendo mas adecuado para el tipo de análisis presentado en el proyecto.
 
 
+#Instrucciones para ejecutar el código 
+
+Se importan los módulos necesarios para el cálculo númerico y la visualización.
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import cm
+from scipy.special import erf, erfc
+
+Definir los parámetros materiales, convectivos y las condiciones de operación del horno:
+- Párametros Materiales: Deff (Difusividad Efectiva), ρs (Densidad del sólido seco), X0 (Humedad
+inicial).
+- Parámetros Convectivos: km (Coeficiente de transferencia de masa), Caire (Concentración de humedad en el aire).
+- Dimensiones: L/2 (Mitad del espesor del alga, para el dominio de simetría).
+
+Se calcula la concentración de humedad de equilibrio (Ce) en la interfase alga-aire, esencial para
+la Condición de Borde de Robin. Esto requiere el cálculo de la presi´on de vapor saturada (Pvs) a la
+temperatura de secado T:
+Ce = awPvs(TL/2)/(RvTL/2)
+
+Se establece la malla y el paso temporal ∆t, garantizando la estabilidad del esquema explícito.
+a) Malla Espacial (∆z): Definir el n´umero de nodos (N) y el espaciamiento: ∆z = (L/2)/(N − 1).
+
+b) Cálculo de ∆t (Condición de Estabilidad): El paso de tiempo debe cumplir la condición de
+von Neumann (Número de Fourier λ ≤ 0,5):
+∆t ≤ 0,5 · ∆z2 Deff, max
+Se utiliza el Deff, max para asegurar la estabilidad durante toda la simulación.
+
+c) Inicialización: Crear el vector de humedad inicial X (tamaño N), con todos los nodos inicializados
+a X0.
+
+El modelo se implementa en notación matricial.
+a) Matriz de Difusión (A): Construir la matriz tridiagonal que incorpora los coeficientes de difusi´on.
+Se ajustan las filas para implementar la condici´on de simetría en el nodo inicial (z = 0) y la parte
+difusiva de la condición de Robin en el nodo final (z = L/2).
+b) Vector Convectivo (b): El vector b maneja la parte no homogénea de la convección superficial,
+siendo distinto de cero únicamente en el último nodo (N), utilizando el t´ermino km(Caire − Ce).
+
+Se realiza la iteración para la evolución del perfil de humedad utilizando la relación explícita de Euler:
+- Iniciar el bucle de tiempo hasta alcanzar la duración deseada o la humedad final.
+- Aplicar la ecuaci´on de evolución en cada paso: Xnew = Xold + (AXold + b) · ∆t
+- Almacenar el perfil Xnew en la matriz histórica (Xnum).
+
+Los resultados se presentan mediante gráficos de línea y mapas de calor.
+- Perfiles de Concentración: Graficar X vs. z para distintos instantes de tiempo t.
+- Mapa de Calor: Utilizar matplotlib.pyplot.pcolormesh con la matriz de resultados transpuesta (X⊤
+num) para visualizar la evolución del contenido de humedad en funci´on del tiempo y la posición.
 
 
 
-Graficos
+#Graficos
 
 En los cuatro siguientes graficos se muestra como va disminuyendo la cantida de humedad a lo largo del espesor del alga (2mm), midiendose a distintos periodos de tiempo hasta un tiempo  maximo de 8 horas
 
