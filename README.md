@@ -17,7 +17,7 @@ Como se menciona anteriormente el fenomeno de transporte utilizado es el de tran
 
 Se considera una condicion incial que sería la humedad incial que posee el alga X(z,t=0) = Xo. La primera condicion de borde es del tipo Neumann en z=0, en donde no hay humedad en el plano central debido a simetria del secado, dX/dz|z=0 = 0. La segunda condicion de borde es del tipo Robin (convectiva) en z= L/2, en donde en la interface el flujo difusivo interno es igual al flujo convectivo de la sueprficie, Deff = dX/dz|z=L/2 = -km(C_aire-C_L/2).
 
-#Descripción metodo númerico
+# Descripción metodo númerico
 
 La implementación numérica del modelo se basa en el método de diferencias finitas (FTCS) aplicado a la ecuación de difusión de Fick en 1D. El dominio espacial corresponde al espesor efectivo de la cama de algas, que se discretiza en N+1 nodos igualmente espaciados con paso ∆z, desde el plano de simetria en z=0 hasta la superficie que está en contacto con el aire en z=L/2. Para el dominio del tiempo se utiliza un paso ∆t, y dado que el metodo de Euler explicito (FTCS) no es completamente estable, se ocupó la condicion de estabilidad de Von Neumann para garantizar que la solución numerica no diverja r=Deff*Δt/(Δz)^2, y se utiliza un Δt que haga que el valor de r (numero de Fourier) sea menor o igual a 0.5.
 
