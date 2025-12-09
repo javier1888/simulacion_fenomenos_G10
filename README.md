@@ -57,10 +57,13 @@ El perfil de cantidad de humedad para este caso se puede apreciar que al pasar l
 
 
 <img width="534" height="406" alt="image" src="https://github.com/user-attachments/assets/4162de71-8754-4e0d-bd48-e2fd77d3c75c" />
-Figura 3.  Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 1"
+Figura 3.  
+Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 1"
 
 <img width="761" height="587" alt="image" src="https://github.com/user-attachments/assets/f18171bd-e985-4060-9bf8-0b81a538e19c" />
-Figura 4. Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 2"
+Figura 4. 
+Este gráfico se encuentra en la carpeta de Resultados Graficos con el nombre de "Secado Convectivo 120°C Gráfico 2"
+
 
 Al observar ambos graficos ya muestran una mejora en el secado del alga, en donde se observa que la cantidad de humedad al pasar las 8 horas disminuye significativamente, quedando menos de un 0.1 kg agua/kg solido seco, estando practicamente seco. La humedad desciende gradualmente a medida que nos acercamos a la superficie, lo cual ocurre a una tasa muy baja. Por lo tanto el modelo nos indica que al aumentar la temperatura a la que se trabaja con el horno convectivo el alga logra deshidratarse de mejor manera. 
 
