@@ -12,10 +12,13 @@ El sistema modela una cama de algas Ulva stenophylloides que se encuentran sobre
 
 
 
-Como se menciona anteriormente el fenomeno de transporte utilizado es el de transfernecia de masa, en concreto la difusion de humedad y descrita por la segunda ley de Fick. Se considera una condicion incial que sería la humedad incial que posee el alga X(z,t=0) = Xo. La primera condicion de borde es del tipo Neumann en z=0, en donde no hay humedad en el plano central debido a simetria del secado, dX/dz|z=0 = 0. La segunda condicion de borde es del tipo Robin (convectiva) en z= L/2, en donde en la interface el flujo difusivo interno es igual al flujo convectivo de la sueprficie, Deff = dX/dz|z=L/2 = -km(C_aire-C_L/2).
+Como se menciona anteriormente el fenomeno de transporte utilizado es el de transfernecia de masa, en concreto la difusion de humedad y descrita por la segunda ley de Fick. Los supuestos principales son un dominio 1D con forma de placa placa con simetría en el plano medio, proceso isotérmico (la temperatura del alga es uniforme e igual a la del aire de secado), propiedades del aire constantes y flujo homogéneo, como tambein la difusividad de humedad se considera independiente del contenido de agua, osea constante y la densidad del alga seca constante tambien.
 
-Los supuestos principales son un dominio 1D con forma de placa placa con simetría en el plano medio, proceso isotérmico (la temperatura del alga es uniforme e igual a la del aire de secado), propiedades del aire constantes y flujo homogéneo, como tambein la difusividad de humedad se considera independiente del contenido de agua, osea constante y la densidad del alga seca constante tambien.
 <img width="573" height="325" alt="image" src="https://github.com/user-attachments/assets/49fc9702-f728-4fb2-9305-af48aa59f2d7" />
+
+Se considera una condicion incial que sería la humedad incial que posee el alga X(z,t=0) = Xo. La primera condicion de borde es del tipo Neumann en z=0, en donde no hay humedad en el plano central debido a simetria del secado, dX/dz|z=0 = 0. La segunda condicion de borde es del tipo Robin (convectiva) en z= L/2, en donde en la interface el flujo difusivo interno es igual al flujo convectivo de la sueprficie, Deff = dX/dz|z=L/2 = -km(C_aire-C_L/2).
+
+
 
 
 
